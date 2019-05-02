@@ -66,6 +66,12 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
     weight = 10
 
   [[menu.main]]
+    name = "test new"
+    url = "travisspear_cv2/"
+    weight = 12
+
+
+  [[menu.main]]
     name = "AAN 2019"
     url = "AAN2019/"
     weight = 15
