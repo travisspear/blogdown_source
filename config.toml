@@ -24,6 +24,8 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   category = ""  # Categories are disabled by default.
 
 [params]
+  customCSS = ["css/style.css"]
+
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
@@ -32,7 +34,8 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   # Metadata mostly used in document's head
   # description = ""
   # images = [""]
-  themeColor = "#494f5c"
+  # Original themeColor = "#494f5c"
+  themeColor = "#3F88C5"
 
   homeSubtitle = "Data Scientist / Analyst"
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
@@ -67,11 +70,6 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 
 
   [[menu.main]]
-    name = "AAN 2019"
-    url = "aan2019/"
-    weight = 15
-
-#  [[menu.main]]
-#    name = "Projects"
-#    url = "post/"
-#    weight = 20
+    name = "Projects"
+    url = "post/"
+    weight = 20
