@@ -1,27 +1,28 @@
 ---
-title: "Parallel Plots for Visualizing Inconsistent Temporality of Clinical Trials"
+title: "Parallel Plots for Exploratory Analysis of Clinical Trial Literature Reviews"
 author: "Travis Spear"
 date: '2018-12-15'
 comments: no
 images: null
-slug: parallel-plots-for-visualizing-inconsistent-temporality-of-clinical-trials
+slug: parallel-plots
 tags: []
 categories: []
 ---
 
 
 
-<p>In the pursuit of more data-centric medical decisions, large scale literature reviews are increasingly necessary. However, these literature reviews are far from entertaining and often hard to depict outside of a numeric tables. In this post, I’ll be visualizing hundreds of clinical trials in a single graph to show how it may be possible to use parallel plots as a copmlementary reporting tool for literature reviews.</p>
+<p>In the pursuit of more data-centric medical decisions large scale literature reviews are increasingly necessary, however, results of these literature reviews are often hard to depict outside of numeric tables. I’ll be exploring the use of parallel plots as a complementary reporting tool for literature reviews through their ability to display hundreds of clinical trials on a single graph.</p>
 <blockquote>
-<p>This idea was insipred by an <a href="https://fivethirtyeight.com/features/americas-electoral-map-is-changing/">excellent set of plots from 538</a>.</p>
+<p>This idea was inspired by an <a href="https://fivethirtyeight.com/features/americas-electoral-map-is-changing/">excellent set of plots from 538</a>.</p>
 </blockquote>
 <div id="the-final-product" class="section level1">
 <h1>The Final Product</h1>
-<p>The following set of parallel plots are packed with information:</p>
+<p>Working at MedAware Systems, I had access to a massive dataset of Alzheimer’s research with variables already extracted. The following plot contains ~750 clinical trials sharing one common feature: the usage of a cognitive test called the “Mini-Mental State Exam (MMSE)” which is the most commonly reported measurement in this disease area.
+In the plots below, there are many different elements and colors used to convey a variety of information about the state of each individual trial. To help orient yourself, the following list of items are the key features to know:</p>
 <ul>
-<li>Each faint line represents an individual group within a clinical trial<br />
+<li>Each faint line represents an individual <strong>group</strong> within a clinical trial<br />
 </li>
-<li>Trial lines are colored based on patients’ <strong>baseline cognitive score</strong> as defined by the Mini-Mental State Exam (MMSE) cutoffs</li>
+<li>Trial lines are colored based on patients’ <strong>baseline cognitive score</strong> as defined by the Mini-Mental State Exam (MMSE) cutoffs. (Higher Score is better)</li>
 <li>The darker lines show the <strong>mean</strong> for each baseline disease severity group<br />
 </li>
 <li>Graphs are split by Active and Control treatments</li>
@@ -30,15 +31,13 @@ categories: []
 <p><img src="/img/noisyParallels.svg" /><!-- --></p>
 <div id="what-does-this-graph-tell-us" class="section level3">
 <h3>What Does This Graph Tell Us?</h3>
-<p>Prior to running any real tests, this graph shows that both Treatments and Controls trend towards the yellow (Mild impairment) area. It also appears that the patients with baseline mild impairment were more likely to remain close to their baseline cognitive status as seen by the low amount of yellow groups entering the blue/red zones by the end of trials.</p>
-</div>
-<div id="questions-to-consider-for-further-work" class="section level3">
-<h3>Questions to consider for further work</h3>
+<p>Prior to running statistical tests, this graph demonstrates:</p>
 <ul>
-<li>Is there a statistically significant difference comparing Treatment and Control groups?<br />
-</li>
-<li>Are certain baseline severity groups more “cognitively fluid” than other groups?</li>
+<li>Most patients entering the trial with mild impairment according to the MMSE remained within the mild impairment boundaries</li>
+<li>Both the Severe Impairment and No Impairment patients trended towards Mild Impairment by the end of their trials</li>
+<li>Active treatments, seen on the left graph, appear to prevent the decline of Mildly Impaired patients when compared to control treatments</li>
 </ul>
+<p>These three observations would need to be confirmed but this type of graph makes it easy to formulate hypotheses.</p>
 </div>
 </div>
 <div id="how-to-reproduce-this-graph" class="section level1">
@@ -319,7 +318,7 @@ While this is far from succinct, I believe the results are worth it.</p>
 </div>
 <div id="the-final-simulated-product" class="section level2">
 <h2>The Final (Simulated) Product</h2>
-<p>This graph is not split by Treatment vs Control but to replicate that all you need is to arrange two graphs with filtred data side by side. The libraries ggpubr and grid worked well for this and allow a great deal of customization.</p>
+<p>This graph is not split by Treatment vs Control but to replicate that all you need is to arrange two graphs with filtered data side by side. The libraries ggpubr and grid worked well for this and allow a great deal of customization.</p>
 <p><img src="/post/2019-08-07-parallel-plots-for-visualizing-inconsistent-temporality-of-clinical-trials_files/figure-html/plot-1.png" width="672" /></p>
 </div>
 </div>
